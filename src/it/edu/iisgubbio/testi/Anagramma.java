@@ -40,17 +40,13 @@ public class Anagramma extends Application {
 		
 		char parolaUno[] = cParolaUno.getText().toCharArray();
 		char parolaDue[] = cParolaDue.getText().toCharArray();
-		
-		if(parolaUno.length != parolaDue.length) {
-			cRisultato.setText("Non sono Anagrammi");
-		}
+		boolean trovato;
 		
 		int lettereUguali = 0;
-		boolean trovato = false;
 		for(int i = 0; i < parolaUno.length; i++) {
 			trovato = false;
-			for(int z = 0; z < parolaUno.length; z++) {
-				if(parolaUno[i] == parolaDue[z] && trovato == false) {
+			for(int z = 0; z < parolaUno.length && trovato == false; z++) {
+				if(parolaUno[i] == parolaDue[z]) {
 					lettereUguali++;
 					trovato = true;
 					// parolaUno[i] = '#';
