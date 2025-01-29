@@ -1,0 +1,25 @@
+.text-field {
+	-fx-background-color: yellow;
+}
+
+.numeri {
+	-fx-text-fill: blue;
+}
+
+.incognite {
+	-fx-text-fill: red;
+}
+
+.soluzioni {
+	-fx-font-size: 20;
+}
+
+.sfondo {
+	-fx-background-color: pink;
+}
+
+.spaziature {
+	-fx-vgap: 5;
+	-fx-hgap: 5;
+	-fx-padding: 10, 10, 10, 10;
+}

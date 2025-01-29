@@ -1,0 +1,26 @@
+.sfondo {
+	-fx-border-color: black;
+	-fx-vgap: 10;
+	-fx-hgap: 10;
+	-fx-padding: 10, 10, 10, 10;
+}
+
+.label {
+	-fx-text-fill: black;
+}
+
+.text-field {
+	-fx-text-fill: black;
+	-fx-background-color: orange;
+}
+
+.button {
+	-fx-text-fill: black;
+	-fx-background-color: purple;
+}
+
+#risultato {
+	-fx-text-fill: black;
+	-fx-background-color: orange;
+	-fx-font-size: 20;
+}

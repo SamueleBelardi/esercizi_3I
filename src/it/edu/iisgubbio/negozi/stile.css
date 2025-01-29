@@ -1,0 +1,20 @@
+.label-dati {
+	-fx-text-fill: blue;
+}
+
+.label-risposte {
+	-fx-text-fill: green;
+	-fx-background-color: yellow;
+	-fx-font-size: 15;
+}	
+
+.text-field {
+	-fx-text-fill: blue;
+	-fx-background-color: lightblue;	
+}
+
+.griglia {
+	-fx-vgap: 10;
+	-fx-hgap: 10;
+	-fx-padding: 10, 10, 10, 10;
+}

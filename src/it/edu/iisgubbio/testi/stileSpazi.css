@@ -1,0 +1,9 @@
+.grande{
+	-fx-font-family: monospaced;
+	-fx-font-size: 20;
+	-fx-pref-width:400;
+}
+
+#lunghezza {
+	-fx-pref-width:50;
+}

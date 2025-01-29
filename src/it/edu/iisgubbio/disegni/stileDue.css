@@ -1,0 +1,19 @@
+#label {
+	-fx-text-fill: black;
+}
+
+#text-field {
+	-fx-border-color: balck;
+	-fx-text-fill: black;
+}
+
+#button {
+	-fx-border-color: black;
+	-fx-text-fill: black;
+}
+
+#sfondo {
+	-fx-vgap: 10;
+	-fx-hgap: 10;
+	-fx-padding: 10, 10, 10, 10;
+}

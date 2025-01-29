@@ -1,0 +1,27 @@
+#utente-uno {
+	-fx-fill: rgba(255, 255, 255, 0.5);
+	-fx-font-size: 30;
+	-fx-font-weight: bold;
+}
+
+#utente-due {
+	-fx-fill: rgba(255, 255, 255, 0.5);
+	-fx-font-size: 30;
+	-fx-font-weight: bold;
+}
+
+#racchetta-sinistra {
+	-fx-fill: white;
+}
+
+#racchetta-destra {
+	-fx-fill: white;
+}
+
+#sfondo {
+	-fx-background-image: url("sfondo.jpg");
+}
+
+#pallina {
+	-fx-fill: white;
+}
