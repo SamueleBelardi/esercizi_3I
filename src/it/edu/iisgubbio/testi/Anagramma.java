@@ -55,7 +55,6 @@ public class Anagramma extends Application {
 			}
 		}
 		
-		System.out.println(lettereUguali);
 		if(lettereUguali == parolaUno.length) {
 			cRisultato.setText("E un anagramma");
 		} else {
