@@ -3,14 +3,17 @@ package it.edu.iisgubbio.testi;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Cesare extends Application{
-
+public class CesareParametri extends Application{
+	
+	Label eParametro = new Label("parametro");
 	TextField cParola = new TextField();
 	TextField cParolaCifrata = new TextField();
+	TextField cParametro = new TextField();
 	Button pCifra = new Button("cifra");
 	Button pDecifra = new Button("decifra");
 	char frase[];
@@ -22,6 +25,8 @@ public class Cesare extends Application{
 		griglia.add(pCifra, 0, 1);
 		griglia.add(pDecifra, 1, 1);
 		griglia.add(cParolaCifrata, 0, 2, 2, 1);
+		griglia.add(eParametro, 0, 3);
+		griglia.add(cParametro, 1, 3);
 		griglia.setId("sfondo");
 		
 		Scene scene = new Scene(griglia);
@@ -39,12 +44,15 @@ public class Cesare extends Application{
 		String parola = cParola.getText();
 		frase = new char[parola.length()];
 		frase = cParola.getText().toCharArray();
+		int parametro = Integer.parseInt(cParametro.getText());
+		
+		int limite = (char) (122-parametro);
 		
 		for(int i = 0; i < frase.length; i++) {
-			if(frase[i] >= 'x') {
+			if(frase[i] >= limite) {
 				frase[i] = ((char) (frase[i]-26)); 
 			}
-			frase[i] = ((char) (frase[i]+3)); 
+			frase[i] = ((char) (frase[i]+parametro)); 
 		}
 		
 		String testo = new String(frase);
@@ -53,11 +61,14 @@ public class Cesare extends Application{
 
 	private void eseguiDecifra() {
 		
+		int parametro = Integer.parseInt(cParametro.getText());
+		int limite = (char) (97+parametro);
+		
 		for(int i = 0; i < frase.length; i++) {
-			if(frase[i] <= 'c') {
+			if(frase[i] <= limite) {
 				frase[i] = ((char) (frase[i]+26)); 
 			}
-			frase[i] = ((char) (frase[i]-3)); 
+			frase[i] = ((char) (frase[i]-parametro)); 
 		}
 			
 		String testo = new String(frase);
