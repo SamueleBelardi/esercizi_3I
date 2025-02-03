@@ -42,9 +42,9 @@ public class Cesare extends Application{
 		
 		for(int i = 0; i < frase.length; i++) {
 			if(frase[i] >= 'x') {
-				frase[i] = ((char) (frase[i]-26)); 
+				frase[i] = (char) (frase[i]-26); 
 			}
-			frase[i] = ((char) (frase[i]+3)); 
+			frase[i] = (char) (frase[i]+3); 
 		}
 		
 		String testo = new String(frase);
@@ -55,9 +55,9 @@ public class Cesare extends Application{
 		
 		for(int i = 0; i < frase.length; i++) {
 			if(frase[i] <= 'c') {
-				frase[i] = ((char) (frase[i]+26)); 
+				frase[i] = (char) (frase[i]+26); 
 			}
-			frase[i] = ((char) (frase[i]-3)); 
+			frase[i] = (char) (frase[i]-3); 
 		}
 			
 		String testo = new String(frase);

@@ -50,9 +50,9 @@ public class CesareParametri extends Application{
 		
 		for(int i = 0; i < frase.length; i++) {
 			if(frase[i] >= limite) {
-				frase[i] = ((char) (frase[i]-26)); 
+				frase[i] = (char) (frase[i]-26); 
 			}
-			frase[i] = ((char) (frase[i]+parametro)); 
+			frase[i] = (char) (frase[i]+parametro); 
 		}
 		
 		String testo = new String(frase);
@@ -66,9 +66,9 @@ public class CesareParametri extends Application{
 		
 		for(int i = 0; i < frase.length; i++) {
 			if(frase[i] <= limite) {
-				frase[i] = ((char) (frase[i]+26)); 
+				frase[i] = (char) (frase[i]+26); 
 			}
-			frase[i] = ((char) (frase[i]-parametro)); 
+			frase[i] = (char) (frase[i]-parametro); 
 		}
 			
 		String testo = new String(frase);
