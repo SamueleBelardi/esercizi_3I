@@ -42,31 +42,35 @@ public class IP extends Application {
 			cRisultato.setText("non e un indirizzo");
 		}
 		
-		int posizione = 0;
-		char controllo[] = indirizzo.toCharArray();
+		boolean errore = false;
+		char [] controllo = indirizzo.toCharArray();
 		for(int i = 0; i < controllo.length; i++) {
 			if(controllo[i] >= 'A' && controllo[i] <= 'z') {
-				cRisultato.setText("non e un indirizzo");
+				errore = true;
 			}
 		}
 		
-		for(int i = 0; i < controllo.length; i++) {
-			iP[posizione] = Integer.parseInt(parti[posizione]);
-			posizione++;
-		}
-		
-		int numeriCorretti = 0;
-		for(int i = 0; i < parti.length; i++) {
-			if(iP[i] >= 0 && iP[i] <= 255) {
-				numeriCorretti++;
-			} else {
-				cRisultato.setText("non e un indirizzo");
+		if(errore == true) {
+			cRisultato.setText("non e un indirizzo");
+		} else {
+			for(int i = 0; i < parti.length; i++) {
+				iP[i] = Integer.parseInt(parti[i]);
+			}
+			
+			int numeriCorretti = 0;
+			for(int i = 0; i < parti.length; i++) {
+				if(iP[i] >= 0 && iP[i] <= 255) {
+					numeriCorretti++;
+				} else {
+					cRisultato.setText("non e un indirizzo");
+				}
+			}
+			
+			if(numeriCorretti == 4) {
+				cRisultato.setText("e un indirizzo");
 			}
 		}
 		
-		if(numeriCorretti == 4) {
-			cRisultato.setText("e un indirizzo");
-		}
 	}
 	
 	public static void main(String[] args) {
