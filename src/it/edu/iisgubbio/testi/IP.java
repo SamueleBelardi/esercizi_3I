@@ -31,7 +31,7 @@ public class IP extends Application {
 		finestra.show();
 		pVerifica.setOnAction( e -> eseguiVerifica());
 	}
-
+	
 	private void eseguiVerifica() {
 		
 		String parti[], indirizzo = cIndirizzo.getText();
