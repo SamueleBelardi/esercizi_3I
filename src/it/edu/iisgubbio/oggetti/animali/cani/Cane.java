@@ -28,16 +28,24 @@ public class Cane {
 		return "Cane: " + nome + " di razza " + razza;
 	}
 	
-	// metodo verifica propiaterio
-	// dato un nome dice se e proprietario o no
-	public boolean verificaPropietario() {
-		boolean controllo = false;
-		String nome = "samuele";
-		
-		if(nomePropietario == nome) {
-			controllo = true;
+	public boolean verificaPropietario(String nome) {
+		if(nomePropietario.equals(nome)) {
+			return true;
+		} else {
+			return false;
 		}
-		return controllo;
 	}
 	
+	public boolean verificaEta(int anno) {
+		if(anno==this.anno) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public int eta(int anno) {
+		return anno - this.anno;
+	}
+
 }

@@ -47,6 +47,4 @@ public class Cuccia {
 		this.colore = colore;
 	}
 	
-	
-	
 }
