@@ -15,9 +15,39 @@ public class Orario {
 		this.secondo = secondo;
 	}
 	
-	public String toString() {
-		return ora + ":" + minuto + ":" + secondo + ":";
+	public void aggiungiOre(int ore) {
+		this.ora = this.ora + ore;
 	}
 	
+	@Override
+	public void aggiungiMinuti(int minuti) {
+		int oreDaAggiungere;
+		this.minuto = this.minuto + minuti;
+		if(this.minuto>=60) {
+			oreDaAggiungere = this.minuto/60;
+			aggiungiOre(oreDaAggiungere);
+			this.minuto = this.minuto-oreDaAggiungere*60;
+		}
+	}
 	
+	public void aggiungiSecondi(int secondi) {
+		int minutiDaAggiungere;
+		this.secondo = this.secondo + secondi;
+		if(this.secondo >= 60) {
+			minutiDaAggiungere = this.secondo/60;
+			aggiungiMinuti(minutiDaAggiungere);
+			this.secondo = this.secondo-minutiDaAggiungere*60;
+		}
+	}
+	
+	public void aggiungiOrario(Orario x) {
+		aggiungiOre(x.ora);
+		aggiungiMinuti(x.minuto);
+		aggiungiSecondi(x.secondo);
+	}
+	
+	@Override
+	public String toString() {
+		return ora + ":" + minuto + ":" + secondo;
+	}
 }

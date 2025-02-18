@@ -10,6 +10,7 @@ public class ProvaAnimali {
 		Cane pluto = new Cane("Pluto", "bassotto", 2019, 120, "Morini");
 		Cuccia casaPierucci  = new Cuccia();
 		
+		System.out.println(pluto);
 		casaPierucci.setInterno(false);
 		casaPierucci.setNumeroPosti(1);
 		casaPierucci.setPrezzo(87);
