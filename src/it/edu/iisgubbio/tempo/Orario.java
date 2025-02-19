@@ -19,7 +19,7 @@ public class Orario {
 		this.ora = this.ora + ore;
 	}
 	
-	@Override
+	
 	public void aggiungiMinuti(int minuti) {
 		int oreDaAggiungere;
 		this.minuto = this.minuto + minuti;
