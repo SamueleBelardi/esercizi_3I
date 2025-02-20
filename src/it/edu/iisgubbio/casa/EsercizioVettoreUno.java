@@ -56,8 +56,8 @@ public class EsercizioVettoreUno extends Application{
 				
 			}
 		}
-		int media = somma / (posizioneDue);
 		
+		int media = somma / (posizioneDue);
 		String vettoreFinale = " ";
 		for(int i = 0; i < vettoreDue.length; i++) {
 			if(vettoreDue[i] != 0) {
