@@ -41,13 +41,20 @@ public class EsercizioVettoreUno extends Application{
 		String vettore = cVettore.getText();
 		String parti[] = vettore.split(" ");
 		vettoreUno = new int[parti.length];
-		vettoreDue = new int[parti.length];
 		
 		for (int i = 0; i < parti.length; i++) {
 			vettoreUno[i] = Integer.parseInt(parti[i]);
 		}
 		
+		int nMaggioriDieci = 0;
+		for(int i = 0; i < vettoreUno.length; i++) {
+			if(vettoreUno[i] > 10) {
+				nMaggioriDieci++;
+			}
+		}
+		
 		int posizioneDue = 0, somma = 0;
+		vettoreDue = new int[nMaggioriDieci];
 		for(int i = 0; i < vettoreUno.length; i++) {
 			if(vettoreUno[i] > 10) {
 				vettoreDue[posizioneDue] = vettoreUno[i];
