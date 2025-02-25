@@ -15,5 +15,12 @@ public class Fattoria {
 			double c = pomodoro.calcolaPrezzo(0.5);
 			System.out.println(c);
 			System.out.println(pomodoro.calcolaPrezzo(0.5));
+			
+			System.out.println("------------------------------");
+			Formaggio taleggio = new Formaggio("taleggio", 25.0, 1, true);
+			Formaggio ricotta = new Formaggio("ricotta", 4.0, 0);
+			
+			System.out.println(taleggio);
+			System.out.println(ricotta);
 	}
 }
