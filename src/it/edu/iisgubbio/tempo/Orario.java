@@ -19,7 +19,7 @@ public class Orario {
 		this.ora = this.ora + ore;
 	}
 	
-	@Override
+	
 	public void aggiungiMinuti(int minuti) {
 		int oreDaAggiungere;
 		this.minuto = this.minuto + minuti;
@@ -46,7 +46,6 @@ public class Orario {
 		aggiungiSecondi(x.secondo);
 	}
 	
-	@Override
 	public String toString() {
 		return ora + ":" + minuto + ":" + secondo;
 	}
