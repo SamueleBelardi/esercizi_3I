@@ -22,4 +22,6 @@ public class Prodotto {
 	public double calcolaPrezzo(double peso){
 		return peso*prezzoAlKg;
 	}
+	
+	
 }
