@@ -33,4 +33,14 @@ public class Formaggio extends Prodotto {
 			return descrizione += ", stagionatura=" + tempoStagionaturaInMesi; 
 		}
 	}
+
+	public void setTempoStagionaturaInMesi(int tempoStagionaturaInMesi) {
+		this.tempoStagionaturaInMesi = tempoStagionaturaInMesi;
+	}
+
+	public void setdOP(boolean dOP) {
+		this.dOP = dOP;
+	}
+	
+	
 }
