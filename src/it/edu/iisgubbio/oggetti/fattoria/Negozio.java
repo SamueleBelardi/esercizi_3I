@@ -23,7 +23,6 @@ public class Negozio extends Application {
     CheckBox cbKosher = new CheckBox("kosher");
     CheckBox cbInterna = new CheckBox("muffa interna");
     ToggleButton tbDOP = new ToggleButton("D O P");
-
     ListView<Prodotto> lvProdotti = new ListView<Prodotto>();
 
     @Override
@@ -90,7 +89,6 @@ public class Negozio extends Application {
 		lvProdotti.getItems().add(x);
 	}
 
-
 	private void eseguiMuffato() {
 		String nome = tfNome.getText();
 		int prezzo = Integer.parseInt(tfPrezzo.getText());
@@ -104,8 +102,6 @@ public class Negozio extends Application {
 		x.setTempoStagionaturaInMesi(stagionatura);
 		lvProdotti.getItems().add(x);
 	}
-
-
 	private void eseguiFormaggio() {
 		String nome = tfNome.getText();
 		int prezzo = Integer.parseInt(tfPrezzo.getText());
@@ -115,7 +111,6 @@ public class Negozio extends Application {
 		lvProdotti.getItems().add(x);
 	}
 
-
 	private void eseguiOrtaggio() {
 		String nome = tfNome.getText();
 		int prezzo = Integer.parseInt(tfPrezzo.getText());
@@ -123,14 +118,13 @@ public class Negozio extends Application {
 		Ortaggio x = new Ortaggio(nome, prezzo, biologico);
 		lvProdotti.getItems().add(x);
 	}
-
+	
 	private void eseguiProdotto() {
 		String nome = tfNome.getText();
 		int prezzo = Integer.parseInt(tfPrezzo.getText());
 		Prodotto x = new Prodotto(nome, prezzo);
 		lvProdotti.getItems().add(x);
 	}
-
 
 	public static void main(String[] args) {
         launch(args);
