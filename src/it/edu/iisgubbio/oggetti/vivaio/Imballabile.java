@@ -1,6 +1,6 @@
 package it.edu.iisgubbio.oggetti.vivaio;
 
-public class Imballabile {
+public interface Imballabile {
 	public double getVolumeImballaggio();
 	public int getPezziPerImballo();
 }

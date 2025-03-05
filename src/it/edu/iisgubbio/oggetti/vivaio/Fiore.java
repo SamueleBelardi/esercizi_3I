@@ -4,29 +4,10 @@ public class Fiore extends Pianta{
 	private String colore;
 	private int stagioneFioritura;
 	
-	public Fiore(String nome, double costo, String colore, String stagioneFioritura) {
+	public Fiore(String nome, double costo, String colore, String stagione) {
 		super(nome, costo);
 		this.colore = colore;
-		if(stagioneFioritura.equals("primavera")) {
-			this.stagioneFioritura = 1;
-		} else {
-			this.stagioneFioritura = 0;
-		}
-		if(stagioneFioritura.equals("estate")) {
-			this.stagioneFioritura = 2;
-		} else {
-			this.stagioneFioritura = 0;
-		}
-		if(stagioneFioritura.equals("autunno")) {
-			this.stagioneFioritura = 3;
-		} else {
-			this.stagioneFioritura = 0;
-		}
-		if(stagioneFioritura.equals("inverno")) {
-			this.stagioneFioritura = 4;
-		} else {
-			this.stagioneFioritura = 0;
-		}
+		setStagioneFioritura(stagione);
 	}
 	
 	public String getColore() {
@@ -35,32 +16,51 @@ public class Fiore extends Pianta{
 	public void setColore(String colore) {
 		this.colore = colore;
 	}
-	public int getStagioneFioritura() {
-		return stagioneFioritura;
+	
+	public String getStagioneFioritura() {
+		String x;
+		switch (this.stagioneFioritura) {
+		case 1:
+			x = "primavera";
+			break;
+		case 2:
+			x = "estate";
+			break;
+		case 3:
+			x = "autunno";
+			break;
+		case 4:
+			x = "inverno";
+			break;
+		default:
+			x = " ";
+		}
+		return x;
 	}
 	
-	public void setStagioneFioritura(String stagioneFioritura) {
-		if(stagioneFioritura.equals("primavera")) {
+	public void setStagioneFioritura(String stagione) {
+		switch (stagione) {
+		case "primavera":
 			this.stagioneFioritura = 1;
-		} else {
-			this.stagioneFioritura = 0;
-		}
-		if(stagioneFioritura.equals("estate")) {
+			break;
+		case "estate":
 			this.stagioneFioritura = 2;
-		} else {
-			this.stagioneFioritura = 0;
-		}
-		if(stagioneFioritura.equals("autunno")) {
+			break;
+		case "autunno":
 			this.stagioneFioritura = 3;
-		} else {
-			this.stagioneFioritura = 0;
-		}
-		if(stagioneFioritura.equals("inverno")) {
+			break;
+		case "inverno":
 			this.stagioneFioritura = 4;
-		} else {
+			break;
+		default:
 			this.stagioneFioritura = 0;
 		}
 	}
 	
+	public String toString() {
+		String descrizione = "Commestibile [nome=" + getNome() + " costo=" + getCosto() + 
+				" colore=" + colore + " stagioneProduzione=" + getStagioneFioritura() +"]";
+				return descrizione;
+	}
 	
 }
