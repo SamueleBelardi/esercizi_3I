@@ -58,8 +58,8 @@ public class Fiore extends Pianta{
 	}
 	
 	public String toString() {
-		String descrizione = "Commestibile [nome=" + getNome() + " costo=" + getCosto() + 
-				" colore=" + colore + " stagioneProduzione=" + getStagioneFioritura() +"]";
+		String descrizione = "Fiore [nome=" + getNome() + " costo=" + getCosto() + 
+				" colore=" + colore + " stagioneFioritura=" + getStagioneFioritura() +"]";
 				return descrizione;
 	}
 	

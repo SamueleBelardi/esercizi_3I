@@ -4,7 +4,7 @@ public class Prova {
 
 	public static void main(String[] args) {
 		Commestibile fragola = new Commestibile("fragola", 10);
-		fragola.setQuantita(1);
+		fragola.setQuantita(24);
 		fragola.setStagioneProduzione("primavera");
 		System.out.println(fragola);
 		
@@ -15,7 +15,11 @@ public class Prova {
 			System.out.println("bell'acquisto");
 		}
 		
-		Imballabile x = economico;
+		int numeriImballi = 0;
+		numeriImballi += fragola.getQuantita() / fragola.getPezziPerImballo();
+		if(fragola.getQuantita()%fragola.getPezziPerImballo() > 0) {
+			numeriImballi++;
+		}
+		System.out.println(numeriImballi);
 	}
-
 }
