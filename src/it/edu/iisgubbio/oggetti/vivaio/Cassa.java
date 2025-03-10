@@ -116,9 +116,26 @@ public class Cassa extends Application{
         bFiore.setOnAction( e -> eseguiFiore());
         bCommestibile.setOnAction( e -> eseguiCommestibile());
         bBonsai.setOnAction( e -> eseguiBonsai());
+        bTotale.setOnAction( e -> eseguiTotale());
     } 
     
-    private void eseguiFiore() {
+    private void eseguiTotale() {
+    	double totale = 0;
+		int numeroPezzi = lista.getItems().size();
+			
+		// for come facciamo noi
+		/*for(int i = 0; i < numeroPezzi; i++) {
+			Pianta pianta = lista.getItems().get(i);
+			totale += pianta.getCosto(); 
+		} */
+		
+		for(Pianta p: lista.getItems()) {
+			totale += p.getCosto();
+		}
+		lDettagli.setText("" + totale);
+	}
+
+	private void eseguiFiore() {
 		String nome = tfNome.getText();
 		double prezzo = Double.parseDouble(tfPrezzo.getText());
 		String colore = tfColore.getText();
@@ -149,5 +166,4 @@ public class Cassa extends Application{
 	public static void main(String[] args) {
         launch(args);
     }
-
 }
