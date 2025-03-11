@@ -16,7 +16,7 @@ public class AMotore extends MezzoDiTrasporto {
 	
 	public String toString() {
 		return "Mezzo motorizzato : " + nome + " (" + costo + 
-				"€) che emette" + rumorosita  + "db di rumore, consuma " + carburante;
+				"€) che emette " + rumorosita  + "db di rumore, consuma " + carburante;
 	}
 	
 	public boolean possibileCentriAbitati() {

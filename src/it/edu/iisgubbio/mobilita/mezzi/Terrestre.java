@@ -9,7 +9,7 @@ public class Terrestre extends AMotore {
 	
 	public String toString() {
 		return "Veicolo terrestre a motore: " + nome + " va a " + getCarburante() +
-				" e al massimo percorre" + velocita + "km in un'ora";
+				" e al massimo percorre " + velocita + "km in un'ora";
 	}
 	
 	public double tempoDiPercorrenza(int distanza) {

@@ -16,9 +16,9 @@ public class Skateboard extends AMuscoli {
 	public String toString() {
 		 String descrizione = "";
 		 if(longboard()) {
-			 descrizione += "skateboard longboard";
+			 descrizione += "skateboard longboard:";
 		 } else {
-			 descrizione += "skateboard";
+			 descrizione += "skateboard:";
 		 }
 		 descrizione += " lungo " + lunghezza + "cm costa " + costo +"€";
 		 return descrizione;

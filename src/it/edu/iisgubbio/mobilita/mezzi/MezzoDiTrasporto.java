@@ -16,7 +16,7 @@ public class MezzoDiTrasporto {
 
 	@Override
 	public String toString() {
-		return "MezzoDiTrasporto [costo=" + costo + ", nome=" + nome + "]";
+		return "Mezzo di trasporto: " + nome + ", " + costo + "€";
 	}
 
 	public double importoRata(int numeroRate) {
