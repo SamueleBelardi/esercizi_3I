@@ -130,7 +130,12 @@ public class Cassa extends Application{
 		} */
 		
 		for(Pianta p: lista.getItems()) {
-			totale += p.getCosto();
+			if(p instanceof Commestibile) {
+				Commestibile c = (Commestibile) p;
+				totale += c.getCosto() * c.getQuantita();
+			} else {
+				totale += p.getCosto();
+			}
 		}
 		lDettagli.setText("" + totale);
 	}
@@ -162,7 +167,6 @@ public class Cassa extends Application{
 		Bonsai b = new Bonsai(nome, prezzo, eta);
 		lista.getItems().add(b);
 	}
-
 	public static void main(String[] args) {
         launch(args);
     }
