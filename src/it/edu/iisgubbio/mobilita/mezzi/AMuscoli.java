@@ -13,11 +13,23 @@ public class AMuscoli extends MezzoDiTrasporto {
 	}
 	
 	public boolean parteAlta() {
-		if(getMuscoliCoinvolti().equals("bicipite") || getMuscoliCoinvolti().equals("petto")) {
-			return true;
-		} else {
-			return false;
-		}
+		boolean x = false;
+		switch (this.muscoliCoinvolti) {
+		case "bicipiti":
+			x = true;
+			break;
+		case "petto":
+			x = true;
+			break;
+		case "tricipiti":
+			x = true;
+			break;
+		case "deltoidi":
+			x = true;
+			break;
+		default:
+		}	
+		return x;
 	}
 	
 	public String toString() {

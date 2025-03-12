@@ -11,9 +11,11 @@ public class Bicicletta extends AMuscoli{
 	}
 	
 	public String toString() {
-		String descrizione = "pesa" + peso + "Kg";
+		String descrizione = "Bicicletta: pesa" + peso + "Kg";
 		if(leggera()) {
 			descrizione += " (leggera) ";
+		} else {
+			descrizione += " (pesante) ";
 		}
 		descrizione += "costa " + costo +"€ (ha " + getNumeroDiRapporti() +"rapporti)";
 		return descrizione;

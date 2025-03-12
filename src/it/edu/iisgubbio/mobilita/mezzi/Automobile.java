@@ -4,6 +4,7 @@ public class Automobile extends Terrestre {
 	private String targa;
 	private int numeroPorte;
 	
+	
 	public Automobile(String nome, double costo, int numeroPorte) {
 		super();
 		this.nome = nome;
