@@ -53,7 +53,7 @@ public class ProvaMezziRimessa {
 		System.out.println(motocicletta);
 		System.out.println(motocicletta.puoTrasportare(2));
 		
-		System.out.println("--------Motocislitta---------");
+		System.out.println("--------Motocislittag---------");
 		Motoslitta motoslitta = new Motoslitta("motoslitta di Mark", 20, 90);
 		motoslitta.setTemperaturaMinima(30);
 		System.out.println(motoslitta);
