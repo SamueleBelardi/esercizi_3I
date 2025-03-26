@@ -17,8 +17,11 @@ public class Nave {
 		this.nome = nome;
 		pezzi = new Pezzo[lunghezza];
 		for(int i = 0; i < lunghezza; i++) {
-			//FIXME ho ignorato la direzione
-			pezzi[i] =  new Pezzo(x+i, y);
+			if(direzione) {
+				pezzi[i] =  new Pezzo(x+i, y);
+			} else {
+				pezzi[i] =  new Pezzo(x, y+i);
+			}	
 		}
 	}
 	
@@ -63,7 +66,13 @@ public class Nave {
 		return descrizione;
 	}
 
-	public String getNome() {
-		return nome;
+	public Pezzo[] getPezzi() {
+		return pezzi;
 	}
+
+	public void setPezzi(Pezzo[] pezzi) {
+		this.pezzi = pezzi;
+	}
+	
+	
 }
