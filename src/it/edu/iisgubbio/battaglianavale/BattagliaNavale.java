@@ -44,8 +44,6 @@ public class BattagliaNavale extends Application {
 					flotta[i] = new Nave("Schettino's boat", (int) (Math.random()*(10)), 
 							(int) (Math.random()*(10-4)), 4, false);
 				}
-				
-				System.out.println(flotta[i]);
 				sonoSovrapposte = false;
 				for(int p = 0; p < i; p++) {
 					if(flotta[i].sovrappone(flotta[p])) {
@@ -54,6 +52,7 @@ public class BattagliaNavale extends Application {
 				}
 				System.out.println(sonoSovrapposte);
 			} while(sonoSovrapposte);
+			System.out.println(flotta[i]);
 		}
 		
 		g.add(coordinateX, 0, 10);
@@ -77,13 +76,10 @@ public class BattagliaNavale extends Application {
 		cX = Integer.parseInt(coordinateX.getText());
 		cY = Integer.parseInt(coordinateY.getText());
 		
-		boolean preso = false;
+		q[cX][cY].setImage(nonColpito);
 		for( int i = 0; i < flotta.length; i++) {
-			if(flotta[i].colpo(cX, cY) && !preso) {
+			if(flotta[i].colpo(cX, cY)) {
 				q[cX][cY].setImage(colpito);
-				preso = true;
-			} else {
-				q[cX][cY].setImage(nonColpito);
 			}
 		}
 		
@@ -95,8 +91,6 @@ public class BattagliaNavale extends Application {
 				}
 			}
 		}
-		
-		
 	}
 
 	public static void main(String[] args) {
