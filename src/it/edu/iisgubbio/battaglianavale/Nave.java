@@ -9,8 +9,7 @@ public class Nave {
 	 * @param x coordinata "x" inizio nave
 	 * @param y coordinata "y" inizio nave
 	 * @param lunghezza lunghezza della nave
-	 * @param direzione direzione della nave se true, è orizzontale
-	 *        altrimenti è verticale
+	 * @param direzione true è orizzontale, false verticale
 	 */
 	public Nave(String nome, int x, int y, int lunghezza, boolean direzione) {
 		super();
@@ -25,6 +24,12 @@ public class Nave {
 		}
 	}
 	
+	/**
+	 * metodo per colpire un pezzo della nave
+	 * @param x coordinata x
+	 * @param y coordinata y
+	 * @return true se colpito
+	 */
 	public boolean colpo(int x, int y) {
 		boolean colpito = false;
 		for(int i = 0; i < pezzi.length; i++ ) {
@@ -35,6 +40,10 @@ public class Nave {
 		return colpito;
 	}
 	
+	/**
+	 * metodo che controlla se la nave è stata affondata
+	 * @return true se la nave è affondata
+	 */
 	public boolean affondato() {
 		int pezziColpiti = 0;
 		for(int i = 0; i < pezzi.length; i++) {
@@ -46,8 +55,14 @@ public class Nave {
 		return pezziColpiti == pezzi.length;
 	}
 	
+	/**
+	 * metodo che controlla se due navi sono sovrapposte
+	 * @param n l'altra Nave da controllare se sovrappone 
+	 * @return true se le due navi si sovrappongono
+	 */
 	public boolean sovrappone(Nave n) {
 		for(int i = 0; i < pezzi.length; i++) {
+			// TODO bisognerebbe lasciare uno spazio ttra una nave e l'altra
 			for(int iAltra = 0; iAltra < n.pezzi.length; iAltra++) {
 				if(pezzi[i].x == n.pezzi[iAltra].x && 
 						pezzi[i].y == n.pezzi[iAltra].y) {
@@ -58,6 +73,7 @@ public class Nave {
 		return false;
 	}
 	
+	@Override
 	public String toString() {
 		String descrizione = "Nome: " + nome;
 		for(int i = 0; i < pezzi.length; i++) {
@@ -66,13 +82,27 @@ public class Nave {
 		return descrizione;
 	}
 
+	/**
+	 * 
+	 * @return vettore dei pezzi che compongono la nave
+	 */
 	public Pezzo[] getPezzi() {
 		return pezzi;
 	}
 
+	/**
+	 * metodo che modifica il vettore di pezzi della nave
+	 * @param pezzi pezzo della nave
+	 */
 	public void setPezzi(Pezzo[] pezzi) {
 		this.pezzi = pezzi;
 	}
-	
-	
+
+	/**
+	 * metodo che modifica il nome della nave
+	 * @param nome nome della nave
+	 */
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 }

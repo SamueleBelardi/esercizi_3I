@@ -21,12 +21,18 @@ public class BattagliaNavale extends Application {
 	Button spara = new Button("spara");
 	Label esito = new Label("???");
 
-	Nave [] flotta = new Nave[4];
+	// se la nave è lunga 2: si chiama incrociatore
+	// se la nave è lunga 3: si chiama sottomarino
+	// se la nave è lunga 4: si chiama porta arei
+	int [] misure = {2, 3, 3, 4, 4};
+	Nave [] flotta = new Nave[misure.length];
 	
 	@Override 
 	public void start(Stage primaryStage) throws Exception {
 		GridPane g = new GridPane();
 		q = new ImageView[10][10];
+		
+		// for che imposta lo sfondo della griglia
 		for(int x = 0; x < q.length; x++) {
 			for(int y = 0; y < q[x].length; y++) {
 				q[x][y] = new ImageView(acqua);
@@ -34,17 +40,35 @@ public class BattagliaNavale extends Application {
 			}
 		}
 		
+		// costruzione della flotta di navi
 		for (int i = 0; i < flotta.length; i++) {
-			boolean sonoSovrapposte = false;
+			boolean sonoSovrapposte;
+			String nomeNave = switch (misure[i]) {
+				case 2 -> "incrociatore";
+				case 3 -> "sottomarino";
+				case 4 -> "porta aerei";
+				default -> "nave";
+			};
+		
 			do {
 				if(Math.random()<0.5) {
-					flotta[i] = new Nave("Schettino's boat", (int) (Math.random()*(10-4)), 
-							(int) (Math.random()*(10)), 4, true);
+					flotta[i] = new Nave(
+							nomeNave, 
+							(int) (Math.random()*(10-misure[i])), 
+							(int) (Math.random()*(10)), 
+							misure[i], 
+							true);
 				} else {
-					flotta[i] = new Nave("Schettino's boat", (int) (Math.random()*(10)), 
-							(int) (Math.random()*(10-4)), 4, false);
+					flotta[i] = new Nave(
+							nomeNave, 
+							(int) (Math.random()*(10)), 
+							(int) (Math.random()*(10-misure[i])),
+							misure[i], 
+							false);
 				}
+	
 				sonoSovrapposte = false;
+				// controlla se le nuova nave si sovrappone con quelle gia presenti
 				for(int p = 0; p < i; p++) {
 					if(flotta[i].sovrappone(flotta[p])) {
 						sonoSovrapposte = true;
@@ -80,14 +104,17 @@ public class BattagliaNavale extends Application {
 		for( int i = 0; i < flotta.length; i++) {
 			if(flotta[i].colpo(cX, cY)) {
 				q[cX][cY].setImage(colpito);
+				esito.setText("colpito");
 			}
 		}
 		
+		// controlla se la nave è affondata
 		for( int i = 0; i < flotta.length; i++) {
 			if(flotta[i].affondato()) {
-				for(int p = 0; p < flotta.length; p++) {
-					Pezzo[] pezzi = flotta[i].getPezzi();
+				Pezzo[] pezzi = flotta[i].getPezzi();
+				for(int p = 0; p < pezzi.length; p++) {
 					q[pezzi[p].x][pezzi[p].y].setImage(affondato);
+					esito.setText("nave affondata");
 				}
 			}
 		}
