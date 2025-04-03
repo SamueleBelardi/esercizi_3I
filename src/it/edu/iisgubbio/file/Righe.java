@@ -1,7 +1,6 @@
 package it.edu.iisgubbio.file;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -13,9 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Demo extends Application {
+public class Righe extends Application {
 	
-	Label eNome = new Label("nome");
+	Label eNome = new Label("n");
 	TextField cFile = new TextField();
 	TextField cLettura = new TextField();
 	Button pLeggi = new Button("leggi");
@@ -40,15 +39,17 @@ public class Demo extends Application {
 	}
 
 	private void eseguiLeggi() {
-		String nomeFile = cFile.getText();
+		int riga = Integer.parseInt(cFile.getText());
 		
 		try {
-			FileReader flussoCaratteri = new FileReader("c:\\Users\\samuelebelardi\\Desktop\\" + nomeFile + ".txt");
-			char caratteri[] = new char[1000];
-			int caratteriLetti = flussoCaratteri.read(caratteri);
-			String testo = new String(caratteri,0,caratteriLetti);
+			FileReader flussoCaratteri = new FileReader("c:\\Users\\samuelebelardi\\Desktop\\prova.txt");
+			BufferedReader lettoreDiRighe = new BufferedReader(flussoCaratteri);
+			String testo = null;
+			for(int i = 0; i < riga; i++) {
+				testo = lettoreDiRighe.readLine();
+			}
 			cLettura.setText(testo);
-			System.out.println(testo);
+			lettoreDiRighe.close();
 			flussoCaratteri.close();
 		} catch (IOException e) {
 			cLettura.setText(e.getLocalizedMessage());
@@ -58,4 +59,5 @@ public class Demo extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 }
